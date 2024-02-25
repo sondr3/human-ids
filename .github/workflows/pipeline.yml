@@ -1,0 +1,35 @@
+name: pipeline
+
+on: [push, pull_request]
+
+jobs:
+  check:
+    strategy:
+      fail-fast: false
+      matrix:
+        os: [macos-latest, macos-14, ubuntu-latest, windows-latest]
+    runs-on: ${{ matrix.os }}
+
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: dtolnay/rust-toolchain@stable
+        with:
+          components: rustfmt, clippy
+
+      - uses: Swatinem/rust-cache@v2
+
+      - name: build
+        run: cargo test --no-run
+
+      - name: test
+        run: cargo test -- --nocapture --quiet
+
+      - name: formatting
+        run: cargo fmt --all -- --check
+
+      - name: check
+        run: cargo check
+
+      - name: clippy
+        run: cargo clippy -- -D warnings
