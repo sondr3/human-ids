@@ -17,7 +17,7 @@ path = "src/main.rs"
 [dependencies]
 clap = { version = "4.4.7", features = [ "derive", "cargo", "env", ] }
 clap_complete = { version = "4.4.4" }
-human_ids = { version = "*", path = "../lib" }
+human_ids = { version = "0", path = "../lib" }
 
 [build-dependencies]
 clap = { version = "4.4.7", features = ["derive", "cargo", "env"] }
