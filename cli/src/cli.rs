@@ -4,7 +4,7 @@ use clap::{Command, Parser};
 use clap_complete::{generate, Generator, Shell};
 
 #[derive(Parser, Debug)]
-#[command(name = "changeset", about, version, author)]
+#[command(name = "human-ids", about, version, author)]
 pub struct Cli {
     /// Generate shell completion scripts
     ///
