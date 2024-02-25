@@ -1,0 +1,19 @@
+[package]
+name = "human-ids-bin"
+version = "0.1.0"
+edition = "2021"
+
+[[bin]]
+name = "human_ids"
+doc = false
+path = "src/main.rs"
+
+[dependencies]
+clap = { version = "4.4.7", features = [ "derive", "cargo", "env", ] }
+clap_complete = { version = "4.4.4" }
+human_ids = { version = "*", path = "../lib" }
+
+[build-dependencies]
+clap = { version = "4.4.7", features = ["derive", "cargo", "env"] }
+clap_complete = "4.4.4"
+clap_mangen = "0.2.15"

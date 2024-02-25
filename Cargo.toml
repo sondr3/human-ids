@@ -1,21 +1,3 @@
-[package]
-name = "human-ids"
-version = "0.1.0"
-edition = "2021"
-
-[lib]
-name = "human_ids"
-path = "src/lib.rs"
-
-[[bin]]
-name = "human-ids"
-path = "src/main.rs"
-required-features = ["binary"]
-
-[features]
-binary = ["clap", "clap_complete"]
-
-[dependencies]
-clap = { version = "4.4.7", features = [ "derive", "cargo", "env", ], optional = true }
-clap_complete = { version = "4.4.4", optional = true }
-fastrand = "2.0.1"
+[workspace]
+members = ["lib", "cli"]
+resolver = "2"
