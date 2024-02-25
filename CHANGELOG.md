@@ -1,3 +1,13 @@
+## v0.1.1
+> 2024-02-25
+
+## Summary
+
+Fix for build issues in CI.
+
+### Commits
+- [[`ff3e1eb`](https://github.com/sondr3/human-ids/commit/ff3e1eb)] Fix build issues based on workspace
+
 ## v0.1.0
 > 2024-02-25
 
@@ -11,5 +21,4 @@ Initial release.
 - [[`9e976c9`](https://github.com/sondr3/human-ids/commit/9e976c9)] Split into workspace, add README etc
 - [[`7c4ec0a`](https://github.com/sondr3/human-ids/commit/7c4ec0a)] Implement human-id
 - [[`2099816`](https://github.com/sondr3/human-ids/commit/2099816)] In the beginning there was darkness
-
 
