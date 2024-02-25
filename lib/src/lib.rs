@@ -1,4 +1,4 @@
-#![doc = include_str!("../../README.md")]
+#![doc = include_str!("../README.md")]
 pub mod constants;
 
 pub use constants::{ADJECTIVES, ADVERBS, NOUNS, VERBS};

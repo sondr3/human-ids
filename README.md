@@ -6,13 +6,8 @@
 </p>
 
 <p align="center">
-    <b>Create .gitignores with templates from www.gitignore.io, your own aliases and templates</b>
+    <b>Create simple human readable IDs</b>
 </p>
-
-- **Simple**: `git ignore node` to print the `node` template.
-- **Offline first**: Automatically caches templates for offline support.
-- **Aliases, templates**: Create aliases for commonly combined templates, or make your own custom ones.
-- **Magic**: Automatically generate your `.gitignore` by matching common files against templates.
 
 <details>
 <summary>Table of Contents</summary>

@@ -1,5 +1,11 @@
 [package]
 name = "human_ids"
+authors = ["Sondre Aasemoen <sondre@eons.io>"]
+description = "Generate human-readable IDs"
+documentation = "https://docs.rs/human_ids"
+homepage = "https://github.com/sondr3/human-ids"
+repository = "https://github.com/sondr3/human-ids"
+license = "MIT"
 version = "0.1.0"
 edition = "2021"
 
