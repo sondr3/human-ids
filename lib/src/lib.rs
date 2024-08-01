@@ -2,7 +2,6 @@
 pub mod constants;
 
 pub use constants::{ADJECTIVES, ADVERBS, NOUNS, VERBS};
-use std::fmt;
 
 /// Trait for selecting elements from a collection.
 pub trait Selector<'a> {
@@ -223,8 +222,8 @@ impl<'a> HumanId<'a> {
     }
 }
 
-impl fmt::Display for HumanId<'_> {
-    fn fmt(&self, f: &mut fmt::Formatter<'_>) -> fmt::Result {
+impl std::fmt::Display for HumanId<'_> {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "{}", self.generate())
     }
 }
@@ -259,6 +258,14 @@ mod tests {
 
     #[test]
     fn test_generate() {
+        let id = HumanId::new(None).generate();
+
+        println!("{}", id);
+        assert!(!id.is_empty());
+    }
+
+    #[test]
+    fn test_generate_with_options() {
         let options = Options::new()
             .separator("_")
             .capitalize(true)
@@ -269,17 +276,12 @@ mod tests {
 
         println!("{}", id);
         assert!(!id.is_empty());
+        assert!(id.contains("_"));
     }
 
     #[test]
     fn test_display() {
-        let options = Options::new()
-            .separator("_")
-            .capitalize(true)
-            .add_adverb(true)
-            .adjective_count(2);
-
-        let id = HumanId::new(Some(options)).to_string();
+        let id = HumanId::new(None).to_string();
 
         println!("{}", id);
         assert!(!id.is_empty());
