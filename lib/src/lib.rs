@@ -87,18 +87,15 @@ pub struct Options<'a> {
     pub adjective_count: usize,
 }
 
-impl Default for Options<'_> {
-    fn default() -> Self {
-        Self {
-            separator: Some("-"),
-            capitalize: true,
-            add_adverb: false,
-            adjective_count: 1,
-        }
-    }
-}
-
 impl<'a> Options<'a> {
+    /// Default options.
+    const DEFAULT: Options<'a> = Options {
+        separator: None,
+        capitalize: true,
+        add_adverb: false,
+        adjective_count: 1,
+    };
+
     /// Creates a new instance of `Options`.
     ///
     /// ## Example
@@ -107,8 +104,8 @@ impl<'a> Options<'a> {
     ///
     /// let options = Options::new();
     /// ```
-    pub fn new() -> Self {
-        Self::default()
+    pub const fn new() -> Self {
+        Self::DEFAULT
     }
 
     /// Sets the separator to use between words.
@@ -164,6 +161,12 @@ impl<'a> Options<'a> {
     }
 }
 
+impl Default for Options<'_> {
+    fn default() -> Self {
+        Self::DEFAULT
+    }
+}
+
 #[derive(Debug)]
 /// Structure for generating human readable identifiers.
 pub struct HumanId<'a> {
@@ -187,9 +190,12 @@ impl<'a> HumanId<'a> {
     /// let options = Options::new();
     /// let human_id = HumanId::new(Some(options));
     /// ```
-    pub fn new(options: Option<Options<'a>>) -> Self {
+    pub const fn new(options: Option<Options<'a>>) -> Self {
         Self {
-            options: options.unwrap_or_default(),
+            options: match options {
+                Some(options) => options,
+                None => Options::DEFAULT,
+            },
         }
     }
 
