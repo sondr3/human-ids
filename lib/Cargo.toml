@@ -16,7 +16,7 @@ edition = "2021"
 fastrand = "2.0.1"
 
 [dev-dependencies]
-criterion = "0.5.1"
+criterion = { version = "0.5.1", features = ["html_reports"] }
 
 [[bench]]
 name = "benchmark"
