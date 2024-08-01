@@ -1,5 +1,5 @@
 use clap::{CommandFactory, Parser};
-use human_ids::{generate, Options};
+use human_ids::{HumanId, Options};
 
 use crate::cli::Cli;
 
@@ -13,12 +13,11 @@ fn main() {
         return;
     }
 
-    let options = Options::builder()
+    let options = Options::new()
         .separator(&cli.separator)
         .capitalize(cli.capitalize)
         .add_adverb(cli.adverb)
-        .adjective_count(cli.num_adjectives)
-        .build();
+        .adjective_count(cli.num_adjectives);
 
-    println!("{}", generate(Some(options)));
+    println!("{}", HumanId::new(Some(options)).generate());
 }
