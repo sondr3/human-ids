@@ -1,3 +1,4 @@
+/// A collection of adjectives
 pub const ADJECTIVES: [&str; 200] = [
     "afraid", "all", "angry", "beige", "big", "better", "bitter", "blue", "brave", "breezy",
     "bright", "brown", "bumpy", "busy", "calm", "chatty", "chilly", "chubby", "clean", "clear",
@@ -21,6 +22,7 @@ pub const ADJECTIVES: [&str; 200] = [
     "young", "yummy",
 ];
 
+/// A collection of nouns
 pub const NOUNS: [&str; 300] = [
     "apes", "animals", "areas", "bars", "banks", "baths", "breads", "bushes", "cloths", "clowns",
     "clubs", "hoops", "loops", "memes", "papers", "parks", "paths", "showers", "sides", "signs",
@@ -55,6 +57,7 @@ pub const NOUNS: [&str; 300] = [
     "wombats", "words", "worlds", "worms", "yaks", "years", "zebras", "zoos",
 ];
 
+/// A collection of verbs
 pub const VERBS: [&str; 250] = [
     "accept", "act", "add", "admire", "agree", "allow", "appear", "argue", "arrive", "ask",
     "attack", "attend", "bake", "bathe", "battle", "beam", "beg", "begin", "behave", "bet", "boil",
@@ -81,6 +84,7 @@ pub const VERBS: [&str; 250] = [
     "wear", "win", "wink", "wish", "wonder", "work", "worry", "write", "yawn", "yell",
 ];
 
+/// A collection of adverbs
 pub const ADVERBS: [&str; 21] = [
     "bravely",
     "brightly",

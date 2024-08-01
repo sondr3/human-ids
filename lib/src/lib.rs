@@ -1,5 +1,5 @@
 #![doc = include_str!("../README.md")]
-pub mod constants;
+mod constants;
 
 pub use constants::{ADJECTIVES, ADVERBS, NOUNS, VERBS};
 
@@ -53,7 +53,7 @@ impl<'a> Selector<'a> for [&'a str] {
 }
 
 /// Trait for capitalizing the first letter of a string.
-pub trait Capitalize {
+trait Capitalize {
     /// Capitalizes the first letter of the string.
     ///
     /// ## Example
@@ -76,7 +76,7 @@ impl Capitalize for &str {
 }
 
 #[derive(Debug)]
-/// Options for generating a human-readable identifier.
+/// Options for generating a human readable identifier.
 pub struct Options<'a> {
     /// Separator to use between words.
     pub separator: Option<&'a str>,
@@ -161,13 +161,13 @@ impl<'a> Options<'a> {
 }
 
 #[derive(Debug)]
-/// Structure for generating human-readable identifiers.
+/// Structure for generating human readable identifiers.
 pub struct HumanId<'a> {
     options: Options<'a>,
 }
 
 impl<'a> HumanId<'a> {
-    /// Creates a new `HumanId` instance with the given options.
+    /// Creates a new `HumanId` instance.
     ///
     /// ## Example
     ///
@@ -182,7 +182,7 @@ impl<'a> HumanId<'a> {
         }
     }
 
-    /// Generates a human-readable identifier based on the options.
+    /// Generates a human readable identifier.
     ///
     /// ## Example
     ///
