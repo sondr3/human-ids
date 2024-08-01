@@ -58,7 +58,6 @@ trait Capitalize {
     ///
     /// ## Example
     /// ```
-    /// # use human_ids::Capitalize;
     /// let s = "hello";
     /// assert_eq!(s.capitalize(), "Hello");
     /// ```
@@ -104,7 +103,8 @@ impl<'a> Options<'a> {
     ///
     /// ## Example
     /// ```
-    /// # use human_ids::Options;
+    /// use human_ids::Options;
+    ///
     /// let options = Options::new();
     /// ```
     pub fn new() -> Self {
@@ -115,7 +115,8 @@ impl<'a> Options<'a> {
     ///
     /// ## Example
     /// ```
-    /// # use human_ids::Options;
+    /// use human_ids::Options;
+    ///
     /// let options = Options::new().separator("-");
     /// ```
     pub const fn separator(mut self, separator: &'a str) -> Self {
@@ -127,7 +128,8 @@ impl<'a> Options<'a> {
     ///
     /// ## Example
     /// ```
-    /// # use human_ids::Options;
+    /// use human_ids::Options;
+    ///
     /// let options = Options::new().capitalize(true);
     /// ```
     pub const fn capitalize(mut self, capitalize: bool) -> Self {
@@ -139,7 +141,8 @@ impl<'a> Options<'a> {
     ///
     /// ## Example
     /// ```
-    /// # use human_ids::Options;
+    /// use human_ids::Options;
+    ///
     /// let options = Options::new().add_adverb(true);
     /// ```
     pub const fn add_adverb(mut self, add_adverb: bool) -> Self {
@@ -151,7 +154,8 @@ impl<'a> Options<'a> {
     ///
     /// ## Example
     /// ```
-    /// # use human_ids::Options;
+    /// use human_ids::Options;
+    ///
     /// let options = Options::new().adjective_count(2);
     /// ```
     pub const fn adjective_count(mut self, adjective_count: usize) -> Self {
@@ -172,7 +176,14 @@ impl<'a> HumanId<'a> {
     /// ## Example
     ///
     /// ```
-    /// # use human_ids::{HumanId, Options};
+    /// use human_ids::HumanId;
+    ///
+    /// let human_id = HumanId::new(None);
+    /// ```
+    /// Or
+    /// ```
+    /// use human_ids::{HumanId, Options};
+    ///
     /// let options = Options::new();
     /// let human_id = HumanId::new(Some(options));
     /// ```
@@ -187,10 +198,9 @@ impl<'a> HumanId<'a> {
     /// ## Example
     ///
     /// ```
-    /// # use human_ids::{HumanId, Options};
-    /// let options = Options::new();
-    /// let human_id = HumanId::new(Some(options));
-    /// let id = human_id.generate();
+    /// use human_ids::HumanId;
+    ///
+    /// let id = HumanId::new(None).generate();
     /// ```
     pub fn generate(&self) -> String {
         let options = &self.options;
