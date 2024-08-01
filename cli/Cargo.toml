@@ -6,7 +6,7 @@ documentation = "https://docs.rs/human_ids"
 homepage = "https://github.com/sondr3/human-ids"
 repository = "https://github.com/sondr3/human-ids"
 license = "MIT"
-version = "0.1.1"
+version = "0.1.2"
 edition = "2021"
 
 [[bin]]
