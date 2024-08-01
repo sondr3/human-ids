@@ -11,3 +11,10 @@ edition = "2021"
 
 [dependencies]
 fastrand = "2.0.1"
+
+[dev-dependencies]
+criterion = "0.5.1"
+
+[[bench]]
+name = "benchmark"
+harness = false
